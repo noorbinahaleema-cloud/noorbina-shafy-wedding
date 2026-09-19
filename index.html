@@ -2029,12 +2029,13 @@ We can’t wait to celebrate with you.
     const btn = form.querySelector(".submit");
     const data = Object.fromEntries(new FormData(form).entries());
 
-    if (!data.name || !data.phone || !data.attendance) {
-      status.textContent = "Please enter your name, phone number and choose Yes or No.";
+    if (!data.name || !data.attendance) {
+      status.textContent = "Please enter your name and choose Yes or No.";
       return;
     }
 
     // Keep compatibility with your existing spreadsheet columns.
+    data.phone = "";
     data.guests = "";
     data.events = "";
     data.message = "";
